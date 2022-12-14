@@ -32,6 +32,19 @@ public class Representative {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Task> tasks;
 
+    public Representative() {
+    }
+
+    public Representative(RepresentativeDTO representativeDTO) {
+        this.representativeName = representativeDTO.getRepresentativeName();
+        this.phoneNumber = representativeDTO.getPhoneNumber();
+        this.emailId = representativeDTO.getEmailId();
+        this.flatNumber = representativeDTO.getFlatNumber();
+        this.wingName = representativeDTO.getWingName();
+        this.apartmentName = representativeDTO.getApartmentName();
+        this.tasks = representativeDTO.getTasks();
+    }
+
     public Integer getId() {
         return id;
     }
