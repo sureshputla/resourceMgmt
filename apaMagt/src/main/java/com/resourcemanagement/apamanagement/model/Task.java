@@ -11,12 +11,19 @@ public class Task implements Serializable {
     @Serial
     private static final long serialVersionUID = -4212487985528265926L;
     @Id
-    @Column(name = "task_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "task_id", nullable = false)
     private Integer id;
 
     @Column(name = "task_name", unique = true)
     private String taskName;
+
+    @ManyToOne
+    @JoinColumn(name = "representative_id")
+    private Representative representative;
+
+    @Column(name = "task_description")
+    private String taskDescription;
 
     public Task() {
     }
@@ -41,11 +48,28 @@ public class Task implements Serializable {
         this.taskName = taskName;
     }
 
+    public Representative getRepresentative() {
+        return representative;
+    }
+
+    public void setRepresentative(Representative representative) {
+        this.representative = representative;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "id=" + id +
-                ", taskName='" + taskName + '\'' +
+                "taskName='" + taskName + '\'' +
+                ", representative=" + representative +
+                ", taskDescription='" + taskDescription + '\'' +
                 '}';
     }
 }
