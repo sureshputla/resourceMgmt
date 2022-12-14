@@ -13,7 +13,7 @@ public class Task implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "task_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "task_name", unique = true)
     private String taskName;
@@ -32,11 +32,11 @@ public class Task implements Serializable {
         this.taskName = taskDTO.getTaskName();
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

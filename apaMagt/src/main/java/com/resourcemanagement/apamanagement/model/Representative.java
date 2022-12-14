@@ -9,7 +9,7 @@ public class Representative {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "representative_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "name")
     private String representativeName;
@@ -45,11 +45,11 @@ public class Representative {
         this.tasks = representativeDTO.getTasks();
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id){
+    public void setId(Long id){
         this.id = id;
     }
 
