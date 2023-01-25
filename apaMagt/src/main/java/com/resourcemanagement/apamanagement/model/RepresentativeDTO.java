@@ -4,14 +4,14 @@ import java.util.Set;
 
 public class RepresentativeDTO {
     private String representativeName;
-    private Integer phoneNumber;
+    private Long phoneNumber;
     private String emailId;
     private String flatNumber;
     private String wingName;
     private String apartmentName;
     private Set<Task> tasks;
 
-    public RepresentativeDTO(String representativeName, Integer phoneNumber, String emailId, String flatNumber, String wingName, String apartmentName, Set<Task> tasks) {
+    public RepresentativeDTO(String representativeName, Long phoneNumber, String emailId, String flatNumber, String wingName, String apartmentName, Set<Task> tasks) {
         this.representativeName = representativeName;
         this.phoneNumber = phoneNumber;
         this.emailId = emailId;
@@ -29,11 +29,11 @@ public class RepresentativeDTO {
         this.representativeName = representativeName;
     }
 
-    public Integer getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

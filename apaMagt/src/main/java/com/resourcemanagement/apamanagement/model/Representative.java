@@ -15,7 +15,7 @@ public class Representative {
     private String representativeName;
 
     @Column(name = "phone_number")
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     @Column(name = "email_id")
     private String emailId;
@@ -61,11 +61,11 @@ public class Representative {
         this.representativeName = representativeName;
     }
 
-    public Integer getPhoneNumber() {
+    public Long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
